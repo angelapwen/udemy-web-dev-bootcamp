@@ -4,11 +4,92 @@
 	<meta charset="utf-8">
 	<title>Image Gallery</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"">
+	<link rel="stylesheet" type="text/css" href="gallery.css">
 </head>
 <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top ">
+		<div class="container">
+			<div class="navbar-header">
+				 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+				<a href="#" class="navbar-brand"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> GLLRY</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+				<ul class="nav navbar-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sign Up</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+<div class="container">
+	<div class="jumbotron">
+		<h1><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> An Image Gallery</h1>
+		<p>A beautiful gallery with which I practice using Bootstrap</p>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1520933793020-26d32feb5351?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6cb15db6019e76a97db7f08d3594cb91&auto=format&fit=crop&w=2767&q=80">
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1534869475731-d3f6f6b3c025?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6f116f9cf62b78a5dd5105dbd18b8e24&auto=format&fit=crop&w=2767&q=80">
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1503561699404-bbc77b80f9f4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d895cddc9144d0d9aa81331c315695d7&auto=format&fit=crop&w=2048&q=80">
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1520265364809-0d457d0183e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=01348c2fe2fcd820a28a9ef1a7ee4e87&auto=format&fit=crop&w=2768&q=80">
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1534846949374-1f3d83c8b8c3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d4f4b8cf17044e43c6d89aa793fb508d&auto=format&fit=crop&w=1567&q=80">
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1520452462074-26f99e73b5ea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=972ee7f45123759bcf3b2979b9a80e5c&auto=format&fit=crop&w=2767&q=80">
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1521121636824-8f7f95cf3d05?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a4e85992e1ded1fb0146217479096b91&auto=format&fit=crop&w=2767&q=80">
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1537895445884-adb79d9f913f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8276915f24980a4b7ee32da1988f82b6&auto=format&fit=crop&w=2767&q=80">
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-6">
+			<div class="thumbnail">
+				<img src="https://images.unsplash.com/photo-1537908110884-3d05817f4f1d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=eb9a4fedc1685dc3db9666ed273b6201&auto=format&fit=crop&w=2767&q=80">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <i class="fas fa-camera-retro"></i>   -->
 
 
-
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script type="<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script
 </body>
