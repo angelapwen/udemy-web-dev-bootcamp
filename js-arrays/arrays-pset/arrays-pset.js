@@ -1,3 +1,4 @@
+/**** printReverse() ****/
 function printReverse(array) {
 	// Loop through starting from end of array
 	for (var i = array.length - 1; i >= 0; i--) {
@@ -8,6 +9,7 @@ function printReverse(array) {
 printReverse([1,2,3,4]);
 printReverse(["a","b","c"]);
 
+/**** isUniform() ****/
 function isUniform(array) {
 	// Store the first item in the array
 	var first = array[0];
@@ -28,20 +30,34 @@ console.log(isUniform([2,1,1,1]));
 console.log(isUniform(["a","b","c"]));
 console.log(isUniform(["b","b","b"]));
 
+/**** sumArray() without using forEach ****/
+// function sumArray(array) {
+// 	// Declare sum variable
+// 	var sum = 0;
+// 	// Loop through array and add each element to sum variable
+// 	for (var i = 0; i < array.length; i++) {
+// 		sum += array[i];
+// 	}
+// 	return sum;
+// }
+
+/**** sumArray() using forEach ****/
 function sumArray(array) {
 	// Declare sum variable
 	var sum = 0;
 	// Loop through array and add each element to sum variable
-	for (var i = 0; i < array.length; i++) {
-		sum += array[i];
-	}
+	array.forEach(function(element) {
+		sum += element;
+	});
 	return sum;
 }
+
 
 console.log(sumArray([1,2,3]));
 console.log(sumArray([10,3,10,4]));
 console.log(sumArray([-5,100]));
 
+/**** max() ****/
 function max(array) {
 	// Declare current max variable as first element
 	var currMax = array[0];
