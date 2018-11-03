@@ -12,23 +12,18 @@ app.get("/", function(req, res) {
 // Two more animals
 
 app.get("/speak/:animal", function(req, res) {
-	let animal = req.params.animal;
-	let sound = "";
-	if (animal === "pig") {
-		sound = "Oink";
+	let animal = req.params.animal.toLowerCase();
+
+	// Create dictionary mapping animals to sounds
+	let sounds = {
+		pig: "Oink",
+		cow: "Moo",
+		dog: "Woof Woof!",
+		duck: "Quaaack",
+		cricket: "Chirp"
 	}
-	else if (animal === "cow") {
-		sound = "Moo";
-	}
-	else if (animal === "dog") {
-		sound = "Woof Woof!"
-	}
-	else if (animal === "duck") {
-		sound = "Quaaack";
-	}
-	else if (animal === "cricket") {
-		sound = "Chirp";
-	}
+
+	let sound = sounds[animal];
 	res.send("The " + animal + " says '" + sound + "'");
 });
 
