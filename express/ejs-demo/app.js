@@ -1,13 +1,19 @@
 let express = require("express");
 let app = express();
 
+// Tells Express to serve the contents of the public directory
+app.use(express.static("public"));
+
+// Tell server to expect ejs files so don't have to include extension
+app.set("view engine", "ejs");
+
 app.get("/", function(req, res) {
-	res.render("home.ejs");
+	res.render("home");
 });
 
 app.get("/fallinlovewith/:thing", function(req, res) {
 	let thing = req.params.thing;
-	res.render("love.ejs", {thingVar: thing});
+	res.render("love", {thingVar: thing});
 });
 
 app.get("/posts", function(req, res) {
@@ -17,7 +23,7 @@ app.get("/posts", function(req, res) {
 		{title: "Crazy title here", author: "Colt"}
 	];
 
-	res.render("posts.ejs", {posts: posts})
+	res.render("posts", {posts: posts})
 });
 
 
