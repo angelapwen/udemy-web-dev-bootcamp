@@ -17189,10 +17189,16 @@ return paper;
 			for(var i = 0; i < circles.length; i++){
 				circles[i].fillColor.hue += 1;
 				circles[i].scale(.9);
+
+				// Remove circle if has disappeared
+				if (circles[i].area < 1) {
+					circles[i].remove(); // Remove circle from canvas
+					circles.splice(i,1); // Remove circle from array
+					console.log(circles);
+				}
 			}
 		}
 
-			
 	</script>
 </head>
 <body>
