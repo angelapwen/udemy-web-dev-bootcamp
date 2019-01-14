@@ -17003,16 +17003,23 @@ return paper;
 
 	</script>
 	<script type="text/paperscript" canvas="myCanvas">
-	function onKeyDown(event) {
-		var maxPoint = new Point(view.size.width, view.size.height);
-		var randomPoint = Point.random();
-		var point = maxPoint * randomPoint;
+	var circles = [];
 
-		new Path.Circle(point, 10).fillColor = "yellow";
-		console.log(view.siz.height);
-		console.log(view.siz.width);
+		function onKeyDown(event) {
+			var maxPoint = new Point(view.size.width, view.size.height);
+			var randomPoint = Point.random();
+			var point = maxPoint * randomPoint;
+			var newCircle = new Path.Circle(point, 500);
+			newCircle.fillColor = "orange";
+			circles.push(newCircle);
+		}
 
-	}
+		function onFrame(event){
+			for(var i = 0; i < circles.length; i++){
+				circles[i].fillColor.hue += 1;
+				circles[i].scale(.9);
+			}
+		}
 
 			
 	</script>
