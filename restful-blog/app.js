@@ -94,6 +94,19 @@ app.put("/blogs/:id", function(req, res) {
 	});
 });
 
+// DELETE ROUTE
+app.delete("/blogs/:id", function(req, res) {
+	// Destroy blog
+	Blog.findByIdAndRemove(req.params.id, function(err) {
+		if(err) {
+			res.redirect("/blogs");
+		} 
+		else {
+			res.redirect("/blogs");
+		}
+	});
+});
+
 // Tell Express to listen for requests (start server)
 app.listen(3000, function() {
 	console.log("Server has started!");
