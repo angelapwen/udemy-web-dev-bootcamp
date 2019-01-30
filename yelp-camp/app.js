@@ -2,20 +2,11 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const Campground = require("./models/campground");
 
 mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
-// SCHEMA SETUP
-var campgroundSchema = new mongoose.Schema({
-	name: String,
-	image: String,
-	description: String
-});
-
-// Compile into model
-var Campground = mongoose.model("Campground", campgroundSchema);
 
 Campground.create(
 	{
@@ -44,7 +35,7 @@ app.get("/campgrounds", function(req, res) {
 			console.log("ERROR");
 		}
 		else {
-			res.render("index", {campgrounds: allCampgrounds});
+			res.render("campgrounds", {campgrounds: allCampgrounds});
 		}
 	});
 });
