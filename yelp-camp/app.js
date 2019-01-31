@@ -22,7 +22,7 @@ app.get("/campgrounds", function(req, res) {
 			console.log("ERROR");
 		}
 		else {
-			res.render("campgrounds", {campgrounds: allCampgrounds});
+			res.render("campgrounds/campgrounds", {campgrounds: allCampgrounds});
 		}
 	});
 });
@@ -48,7 +48,7 @@ app.post("/campgrounds", function (req, res) {
 
 // NEW - show form to create new campground
 app.get("/campgrounds/new", function (req, res) {
-	res.render("new");
+	res.render("campgrounds/new");
 });
 
 // SHOW - show smore info about one campground 
@@ -61,9 +61,24 @@ app.get("/campgrounds/:id", function(req, res) {
 		else {
 			console.log(foundCampground);
 			// Render show template 
-			res.render("show", {campground: foundCampground});
+			res.render("campgrounds/show", {campground: foundCampground});
 		}
 	});	
+});
+
+// ============================
+// COMMENTS ROUTES
+// ============================
+app.get("/campgrounds/:id/comments/new", function(req, res) {
+	// Find campground by ID
+	Campground.findById(req.params.id, function(err, campground) {
+		if(err) {
+			console.log(err);
+		}
+		else {
+			res.render("comments/new", {campground: campground});
+		}
+	})
 });
 
 // Tell Express to listen for requests (start server)
