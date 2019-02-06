@@ -19,6 +19,7 @@ app.use(require("express-session")({
 app.use(passport.initialize()); // Set passport up
 app.use(passport.session());
 
+passport.use(new LocalStrategy(User.authenticate())); 
 passport.serializeUser(User.serializeUser()); // Encoding data to insert to session
 passport.deserializeUser(User.deserializeUser()); // Unencoding data from session
 
@@ -59,6 +60,20 @@ app.post("/register", function(req,res) {
 	});
 });
 
+// LOGIN ROUTES
+
+// Render login form
+app.get("/login", function(req, res) {
+	res.render("login");
+});
+
+// Login logic
+app.post("/login",passport.authenticate("local", {
+	successRedirect: "/secret", // If works, redirect to /secret
+	failureRedirect: "/login" // Else redirect to /login
+}),function(req, res) {
+
+});
 
 // Tell Express to listen for requests (start server)
 app.listen(3000, function() {
