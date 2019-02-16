@@ -108,6 +108,7 @@ function checkCampgroundOwnership(req, res, next) {
 				}
 				else {
 					// Does user own campground?
+					console.log(foundCampground);
 					if(foundCampground.author.id.equals(req.user._id)) { // Mongoose equals method
 						next();
 					}
