@@ -12,6 +12,12 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next) {
 					res.redirect("back");
 				}
 				else {
+					// Check if foundCampground exists
+					if (!foundCampground) {
+						req.flash("error", "Item not found.");
+						return res.redirect("back");
+					}
+
 					// Does user own campground?
 					console.log(foundCampground);
 					if(foundCampground.author.id.equals(req.user._id)) { // Mongoose equals method
@@ -26,7 +32,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next) {
 		}
 	// If not, redirect
 	else {
-		console.log("You need to be logged in to do that!");
+		req.flash("error", "You need to be logged in to do that.");
 		res.redirect("back");
 	}
 }
@@ -39,7 +45,11 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
 					res.redirect("back");
 				}
 				else {
-					console.log(foundComment);
+					// Check if foundComment exists
+					if (!foundComment) {
+						req.flash("error", "Item not found.");
+						return res.redirect("back");
+					}
 					// Does user own comment?
 					if(foundComment.author.id.equals(req.user._id)) { // Mongoose equals method
 						next();
